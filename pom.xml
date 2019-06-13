@@ -17,10 +17,6 @@
 
     <packaging>jar</packaging>
 
-    <properties>
-
-    </properties>
-
     <dependencies>
 
         <!-- https://mvnrepository.com/artifact/cglib/cglib -->
