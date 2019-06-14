@@ -11,9 +11,22 @@ import java.util.Map;
  */
 public enum HareJsonTypeEnums {
 
-    JACKSON(0),
-    GSON(1),
-    FASTJSON(2),
+    /**
+     * normal custom jsoner
+     */
+    CUSTOM(0),
+    /**
+     * jackson
+     */
+    JACKSON(1),
+    /**
+     * gson
+     */
+    GSON(2),
+    /**
+     * fastjson
+     */
+    FASTJSON(3),
     ;
 
     private int value;

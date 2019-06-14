@@ -1,37 +1,33 @@
 package cn.tenbit.hare.core.json.support;
 
-import cn.tenbit.hare.core.common.constant.HareConsts;
 import cn.tenbit.hare.core.json.HareJson;
-import com.google.gson.Gson;
+import cn.tenbit.hare.core.support.HareExecCustomCode;
 
 import java.util.List;
 
 /**
  * @Author bangquan.qian
- * @Date 2019-06-13 17:21
+ * @Date 2019-06-14 11:20
  */
-public class HareGson extends AbstractHareJson implements HareJson {
-
-    private Gson gson = new Gson();
+public abstract class AbstractHareJson implements HareJson {
 
     @Override
     public <T> T parseJavaObject(String str, Class<T> clz) {
-        return gson.fromJson(str, clz);
+        throw HareExecCustomCode.UNSUPPORTED.newException();
     }
 
     @Override
     public <T> List<T> parseJavaArray(String str, Class<T> clz) {
-        return super.parseJavaArray(str, clz);
+        throw HareExecCustomCode.UNSUPPORTED.newException();
     }
 
     @Override
     public String toJsonString(Object obj) {
-        return gson.toJson(obj);
+        throw HareExecCustomCode.UNSUPPORTED.newException();
     }
 
     @Override
-    @SuppressWarnings(HareConsts.SUPPRESS_WARNING_UNCHECKED)
     public <T> T exportJson() {
-        return (T) gson;
+        throw HareExecCustomCode.UNSUPPORTED.newException();
     }
 }

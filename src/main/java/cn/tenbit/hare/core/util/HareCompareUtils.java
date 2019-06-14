@@ -1,5 +1,6 @@
 package cn.tenbit.hare.core.util;
 
+import cn.tenbit.hare.core.common.constant.HareConsts;
 import cn.tenbit.hare.core.support.HareExecCustomCode;
 
 /**
@@ -41,7 +42,7 @@ public class HareCompareUtils {
         return result;
     }
 
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings(HareConsts.SUPPRESS_WARNING_UNCHECKED)
     private static <T> boolean compare(T src, T dst, CompareOperation operation) {
         boolean result = false;
         if (src == dst) {

@@ -13,4 +13,8 @@ public interface HareConsts {
     String SPACE = StringUtils.SPACE;
 
     String NL = System.getProperty("line.separator", "\n");
+
+    String SUPPRESS_WARNING_UNCHECKED = "unchecked";
+    String SUPPRESS_WARNING_RAWTYPE = "rawtype";
+    String SUPPRESS_WARNING_DEPRECATION = "deprecation";
 }

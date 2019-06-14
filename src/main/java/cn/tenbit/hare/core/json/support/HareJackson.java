@@ -1,8 +1,8 @@
 package cn.tenbit.hare.core.json.support;
 
+import cn.tenbit.hare.core.common.constant.HareConsts;
 import cn.tenbit.hare.core.exception.HareException;
 import cn.tenbit.hare.core.json.HareJson;
-import cn.tenbit.hare.core.support.HareExecCustomCode;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -13,7 +13,7 @@ import java.util.List;
  * @Author bangquan.qian
  * @Date 2019-06-13 17:21
  */
-public class HareJackson implements HareJson {
+public class HareJackson extends AbstractHareJson implements HareJson {
 
     private ObjectMapper mapper = new ObjectMapper();
 
@@ -28,7 +28,7 @@ public class HareJackson implements HareJson {
 
     @Override
     public <T> List<T> parseJavaArray(String str, Class<T> clz) {
-        throw HareExecCustomCode.UNSUPPORTED.newException();
+        return super.parseJavaArray(str, clz);
     }
 
     @Override
@@ -41,7 +41,7 @@ public class HareJackson implements HareJson {
     }
 
     @Override
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings(HareConsts.SUPPRESS_WARNING_UNCHECKED)
     public <T> T exportJson() {
         return (T) mapper;
     }
