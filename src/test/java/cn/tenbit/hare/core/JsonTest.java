@@ -1,11 +1,8 @@
 package cn.tenbit.hare.core;
 
+import cn.tenbit.hare.core.bean.Human;
 import cn.tenbit.hare.core.util.HareJsonUtils;
 import cn.tenbit.hare.core.util.HarePrintUtils;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import org.junit.Test;
 
 /**
@@ -16,21 +13,14 @@ public class JsonTest {
 
     @Test
     public void test() {
-        Person person = Person.of(1L, "jack");
+        Human human = Human.of(1L, "jack");
 
-        String string = HareJsonUtils.toJsonString(person);
+        String string = HareJsonUtils.toJsonString(human);
         HarePrintUtils.console(string);
 
-        person = HareJsonUtils.parseJavaObject(string, Person.class);
-        HarePrintUtils.prettyJsonConsole(person);
-    }
+        human = HareJsonUtils.parseJavaObject(string, Human.class);
+        HarePrintUtils.prettyJsonConsole(human);
 
-    @Getter
-    @Setter
-    @NoArgsConstructor
-    @AllArgsConstructor(staticName = "of")
-    private static class Person {
-        private Long id;
-        private String name;
+        HarePrintUtils.jsonWithPrefixConsole("json", human);
     }
 }

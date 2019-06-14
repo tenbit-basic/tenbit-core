@@ -8,11 +8,15 @@ import org.apache.commons.lang3.StringUtils;
  */
 public interface HareConsts {
 
+    String PRINT_DATE_PATTERN = "[yyyy/MM/dd HH:mm:ss]";
+
     String EMPTY = StringUtils.EMPTY;
 
     String SPACE = StringUtils.SPACE;
 
     String NL = System.getProperty("line.separator", "\n");
+
+    String UL = "_";
 
     String SUPPRESS_WARNING_UNCHECKED = "unchecked";
     String SUPPRESS_WARNING_RAWTYPE = "rawtype";

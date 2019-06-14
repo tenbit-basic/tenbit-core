@@ -1,5 +1,6 @@
 package cn.tenbit.hare.core.util;
 
+import cn.tenbit.hare.core.common.constant.HareConsts;
 import cn.tenbit.hare.core.exception.HareException;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import org.apache.commons.io.FileUtils;
@@ -27,6 +28,16 @@ public class HarePrintUtils {
     public static void prettyJsonConsole(Object... objs) {
         Object obj = getOutput(objs);
         sout(HareJsonUtils.toJsonString(obj, SerializerFeature.PrettyFormat));
+    }
+
+    public static void jsonWithPrefixConsole(String prefix, Object... args) {
+        StringBuilder sb = new StringBuilder()
+                .append(HareTimeUtils.currentTimeMillisString())
+                .append(HareConsts.SPACE)
+                .append(prefix)
+                .append(" --> ")
+                .append(HareStringUtils.toJsonString(getOutput(args)));
+        sout(sb.toString());
     }
 
     public static void stringFile(String path, String content) {

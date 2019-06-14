@@ -6,6 +6,7 @@
     <parent>
         <groupId>cn.tenbit.basic</groupId>
         <artifactId>tenbit-bom</artifactId>
+        <!--<version>1.0.0</version>-->
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
@@ -13,6 +14,7 @@
 
     <artifactId>tenbit-core</artifactId>
     <name>${project.artifactId}</name>
+    <!--<version>1.0.0</version>-->
     <version>1.0.0-SNAPSHOT</version>
 
     <packaging>jar</packaging>
@@ -298,7 +300,7 @@
             <artifactId>commons-collections</artifactId>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang -->
         <dependency>
             <groupId>commons-lang</groupId>
             <artifactId>commons-lang</artifactId>

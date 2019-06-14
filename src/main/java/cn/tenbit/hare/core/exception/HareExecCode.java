@@ -3,6 +3,7 @@ package cn.tenbit.hare.core.exception;
 import cn.tenbit.hare.core.support.HareExecCustomCode;
 import cn.tenbit.hare.core.util.HareClassUtils;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -22,7 +23,7 @@ public class HareExecCode {
 
     //--------------------------------------------------------------------------------------------//
 
-    private static final Map<Integer, HareExecCode> INSIDE_MAP = new ConcurrentHashMap<>();
+    private static final Map<Integer, HareExecCode> INSIDE_MAP = new HashMap<>();
     private static final Map<Integer, HareExecCode> MAP = new ConcurrentHashMap<>();
 
     private static final AtomicInteger INDEX = new AtomicInteger(100);
