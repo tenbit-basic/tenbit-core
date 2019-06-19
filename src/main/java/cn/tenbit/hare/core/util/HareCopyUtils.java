@@ -1,22 +1,22 @@
 package cn.tenbit.hare.core.util;
 
+import cn.tenbit.hare.core.beancopy.HareBeanCopy;
+import cn.tenbit.hare.core.beancopy.factory.HareBeanCopyFactory;
 import cn.tenbit.hare.core.common.constant.HareConsts;
 import cn.tenbit.hare.core.exception.HareException;
-import net.sf.cglib.beans.BeanCopier;
 import org.apache.commons.collections4.CollectionUtils;
-import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @Author bangquan.qian
  * @Date 2019-06-14 16:09
  */
 public class HareCopyUtils {
+
+    private static final HareBeanCopy HARE_BEAN_COPY = HareBeanCopyFactory.getBeanCopy();
 
     /**
      * 对象浅拷贝
@@ -27,9 +27,7 @@ public class HareCopyUtils {
         }
 
         try {
-            T t = clz.newInstance();
-            copyProperties(s, t, ignoreProperties);
-            return t;
+            return copyProperties(s, clz, ignoreProperties);
         } catch (Exception e) {
             throw HareException.of("copyObject", e);
         }
@@ -57,23 +55,8 @@ public class HareCopyUtils {
         }
     }
 
-    private static <S, T> void copyProperties(S s, T t, String... ignoreProperties) {
-        BeanCopier beanCopier = findBeanCopier(s.getClass(), t.getClass());
-        beanCopier.copy(s, t, null);
-    }
-
-    private static final Map<String, BeanCopier> CACHE = new ConcurrentHashMap<>();
-
-    private static BeanCopier findBeanCopier(Class<?> s, Class<?> t) {
-        String cacheKey = getCacheKey(s, t);
-        BeanCopier beanCopier = CACHE.get(cacheKey);
-        if (beanCopier == null) {
-            CACHE.put(cacheKey, beanCopier = BeanCopier.create(s, t, false));
-        }
-        return beanCopier;
-    }
-
-    private static String getCacheKey(Class<?> s, Class<?> t) {
-        return StringUtils.joinWith(HareConsts.UL, s.getCanonicalName(), t.getCanonicalName());
+    @SuppressWarnings(HareConsts.SUPPRESS_WARNING_UNCHECKED)
+    private static <S, T> T copyProperties(S s, Class<T> clz, String... ignoreProperties) {
+        return (T) HARE_BEAN_COPY.copy(s, clz, ignoreProperties);
     }
 }
