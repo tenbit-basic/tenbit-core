@@ -1,6 +1,6 @@
 package cn.tenbit.hare.core.util;
 
-import cn.tenbit.hare.core.bean.Human;
+import cn.tenbit.hare.core.domain.Human;
 import com.google.common.collect.Lists;
 import org.junit.Test;
 

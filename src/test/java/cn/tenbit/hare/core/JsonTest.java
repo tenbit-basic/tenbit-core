@@ -1,6 +1,6 @@
 package cn.tenbit.hare.core;
 
-import cn.tenbit.hare.core.bean.Human;
+import cn.tenbit.hare.core.domain.Human;
 import cn.tenbit.hare.core.util.HareJsonUtils;
 import cn.tenbit.hare.core.util.HarePrintUtils;
 import org.junit.Test;

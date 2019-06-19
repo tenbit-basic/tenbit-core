@@ -1,5 +1,7 @@
 package cn.tenbit.hare.core.util;
 
+import cn.tenbit.hare.core.util.HareCompareUtils;
+import cn.tenbit.hare.core.util.HarePrintUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 import org.junit.Test;
 

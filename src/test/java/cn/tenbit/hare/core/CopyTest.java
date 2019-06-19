@@ -1,7 +1,9 @@
-package cn.tenbit.hare.core.util;
+package cn.tenbit.hare.core;
 
-import cn.tenbit.hare.core.bean.Human;
-import cn.tenbit.hare.core.bean.Person;
+import cn.tenbit.hare.core.domain.Human;
+import cn.tenbit.hare.core.domain.Person;
+import cn.tenbit.hare.core.util.HareBeanUtils;
+import cn.tenbit.hare.core.util.HarePrintUtils;
 import org.junit.Test;
 
 /**

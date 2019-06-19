@@ -1,4 +1,4 @@
-package cn.tenbit.hare.core.bean;
+package cn.tenbit.hare.core.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

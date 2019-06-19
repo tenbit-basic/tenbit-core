@@ -12,7 +12,7 @@ import java.util.Map;
 public enum HareBeanCopyTypeEnums {
 
     /**
-     * custom bean copier
+     * custom domain copier
      */
     CUSTOM(0),
     /**
