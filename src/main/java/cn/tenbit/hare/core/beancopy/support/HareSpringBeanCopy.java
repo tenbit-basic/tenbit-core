@@ -15,7 +15,7 @@ public class HareSpringBeanCopy<S, R> extends AbstractHareBeanCopy<S, R> impleme
     public R copy(S src, Class<R> retCLz, String... ignoreProperties) {
         R ret = HareClassUtils.newInstance(retCLz);
         try {
-            BeanUtils.copyProperties(ret, src, ignoreProperties);
+            BeanUtils.copyProperties(src, ret, ignoreProperties);
         } catch (Exception e) {
             throw HareException.of(e);
         }
