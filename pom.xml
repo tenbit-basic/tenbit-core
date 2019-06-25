@@ -21,6 +21,11 @@
 
     <dependencies>
 
+        <dependency>
+            <groupId>cn.tenbit.basic</groupId>
+            <artifactId>tenbit-lite</artifactId>
+        </dependency>
+
     </dependencies>
 
 </project>
